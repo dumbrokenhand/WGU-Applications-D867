@@ -26,19 +26,6 @@ class Student {
             degreeProgram = Undefined;
         }
 
-        // contructors with parameters
-        Student::Student() {
-            this->studentID = studentID;
-            this->firstName = firstName;
-            this->lastName = lastName;
-            this->emailAddress = emailAddress;
-            this->age = age;
-            this->daysInCourse[0] = daysInCourse[0];
-            this->daysInCourse[1] = daysInCourse[1];
-            this->daysInCourse[2] = daysInCourse[2];
-            this->degreeProgram = degreeProgram;
-        }
-
         // d.  a print() function to print specific student data in the provided format:
         void PrintFunction() {
             cout << studentID << "\t"; 
@@ -114,3 +101,4 @@ class Student {
         }
 
 };
+
