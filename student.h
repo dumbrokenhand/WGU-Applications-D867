@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <array>
 using namespace std;
 
 class Student {
@@ -10,7 +11,7 @@ class Student {
         string lastName;
         string emailAddress;
         int age;
-        int daysInCourse[3];
+        array<int, 3> daysInCourse {};
         enum DegreeProgram {SECURITY, NETWORK, SOFTWARE, Undefined} degreeProgram;
 
         // constructors w/ default values
@@ -101,4 +102,5 @@ class Student {
         }
 
 };
+
 
