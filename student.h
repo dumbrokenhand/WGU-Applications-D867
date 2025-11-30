@@ -11,8 +11,13 @@ class Student {
         string lastName;
         string emailAddress;
         int age;
-        array<int, 3> daysInCourse {};
-        enum DegreeProgram {SECURITY, NETWORK, SOFTWARE, Undefined} degreeProgram;
+        std::array <int, 3> daysInCourse{};
+        enum DegreeProgram {
+            SECURITY,
+            NETWORK,
+            SOFTWARE,
+            Undefined
+        } degreeProgram;
 
         // constructors w/ default values
         Student::Student() {
@@ -27,23 +32,20 @@ class Student {
             degreeProgram = Undefined;
         }
 
-        // d.  a print() function to print specific student data in the provided format:
-        void PrintFunction() {
-            cout << studentID << "\t"; 
-            cout << "First Name: " << firstName << "\t";
-            cout << "Last Name: " << lastName << "\t";
-            cout << "Email: " << emailAddress << "\t";
-            cout << "Age: " << age << "\t";
-            cout << "daysInCourse: {";
-            for (int i = 0; i < 3; ++i) {
-            cout << daysInCourse[i];
-            if (i < 2) {
-                cout << ", ";
-            }
-            }
-            cout << "}\t";
-            cout << "Degree Program: " << degreeProgram;
+        // contructors with parameters ... might not need
+        /*
+        Student::Student() {
+            this->studentID = studentID;
+            this->firstName = firstName;
+            this->lastName = lastName;
+            this->emailAddress = emailAddress;
+            this->age = age;
+            this->daysInCourse[0] = daysInCourse[0];
+            this->daysInCourse[1] = daysInCourse[1];
+            this->daysInCourse[2] = daysInCourse[2];
+            this->degreeProgram = degreeProgram;
         }
+        */
 
     public:
 
@@ -92,15 +94,34 @@ class Student {
         void setAge(int newAge) {
             age = newAge;
         }
-        void setDaysInCourse(array <int,3> newDaysInCourse) {
+        void setDaysInCourse(std::array <int,3> newDaysInCourse) {
             daysInCourse[0] = newDaysInCourse[0];
             daysInCourse[1] = newDaysInCourse[1];
             daysInCourse[2] = newDaysInCourse[2];
         }
-        void setDegreeProgram() { // fix this function to refelct proper parameter
-            this->degreeProgram = degreeProgram;
+        void setDegreeProgram(DegreeProgram newDegreeProgram) {
+            degreeProgram = newDegreeProgram;
         }
 
+
+        // d.  a print() function to print specific student data in the provided format:
+        void printFunction() {
+            cout << studentID << "\t"; 
+            cout << "First Name: " << firstName << "\t";
+            cout << "Last Name: " << lastName << "\t";
+            cout << "Email: " << emailAddress << "\t";
+            cout << "Age: " << age << "\t";
+            cout << "daysInCourse: {";
+            for (int i = 0; i < 3; ++i) {
+            cout << daysInCourse[i];
+            if (i < 2) {
+                cout << ", ";
+            }
+            }
+            cout << "}\t";
+            cout << "Degree Program: " << degreeProgram;
+            cout << "\n";
+        }
+
+
 };
-
-
